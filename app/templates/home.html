@@ -3,18 +3,19 @@
 </header>
 <div class="container-fluid main">
   <div class="row main">
-    <div class="col-sm-3 sidebar">
+    <div class="col-sm-3 sidebar d-flex flex-column">
       <div class="room-list" ng-repeat="room in home.rooms.all">
         <p>
           {{room.$value}}
         </p>
       </div>
+      <ng-include src="'templates/newRoomForm.html'"></ng-include>
     </div>
     <div class="col-sm-9">
       <h2>
         Time For Tea?
       </h2>
       <img src="assets/images/tea_cup.png" alt="Tea Cup"
-        class="rounded mx-auto d-block">
+        class="img-fluid rounded mx-auto d-block">
   </div>
 </div>

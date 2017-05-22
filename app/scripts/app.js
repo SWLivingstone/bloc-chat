@@ -11,10 +11,14 @@
         url: '/',
         controller: 'HomeCtrl as home',
         templateUrl: '/templates/home.html'
+      })
+      .state('newRoomForm', {
+        controller: 'ModalCtrl as modal',
+        templateUrl: '/templates/newRoomForm.html'
       });
   }
 
   angular
-      .module('blocChat',['ui.router', 'firebase'])
+      .module('blocChat',[ 'ui.bootstrap', 'ui.router', 'firebase'])
       .config(config);
 })();

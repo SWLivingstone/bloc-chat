@@ -1,0 +1,20 @@
+<body>
+  <button type="button" class="btn btn-secondary"
+    id="new-room-button" ng-click="modal.open()">
+    New Room
+  </button>
+
+  <div ng-show="modal.showModal" close="modal.cancel()">
+    <div class="modal-header">
+        <h4>Modal Dialog</h4>
+    </div>
+    <div class="modal-body">
+        <p>Example paragraph with some text.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" ng-click="modal.ok()">Okay</button>
+      <button class="btn" ng-click="modal.cancel()">Cancel</button>
+    </div>
+  </div>
+
+</body>
