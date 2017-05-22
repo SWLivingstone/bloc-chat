@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1CC6FF;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  height: 5rem;
+}
+
+header h1 {
+  padding-top: 1rem;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.sidebar {
+  background-color: #FF551C;
+}
+
+.main {
+  height: 100%;
+}
+
+.room-list {
+  color: white;
+  font-weight: 300;
+  font-size: 1.3rem;
+  text-align: center;
+  border: 3px solid white;
+  margin: 1rem;
+}
+
+.room-list:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
