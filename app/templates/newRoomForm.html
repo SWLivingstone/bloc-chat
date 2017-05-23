@@ -1,20 +1,23 @@
-<body>
-  <button type="button" class="btn btn-secondary"
-    id="new-room-button" ng-click="modal.open()">
-    New Room
+<div class="modal-header">
+  <h3 class="modal-title">Enter New Chatroom Name</h3>
+</div>
+<div class="modal-body">
+  <form ng-submit="ok()">
+    <div class="input-group animated fadeIn">
+      <input type="text" class="form-control finderBar"
+        ng-model="newRoom" placeholder="New chatroom name..."
+        autofocus>
+      <span class="input-group-btn">
+      <button class="btn btn-default btn-success" type="button"
+        ng-click="create()">Create
+      </button>
+  </span>
+    </div>
+  </form>
+
+</div>
+<div class="modal-footer">
+  <button class="btn btn-warning" type="button"
+    ng-click="cancel()">Cancel
   </button>
-
-  <div ng-show="modal.showModal" close="modal.cancel()">
-    <div class="modal-header">
-        <h4>Modal Dialog</h4>
-    </div>
-    <div class="modal-body">
-        <p>Example paragraph with some text.</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-success" ng-click="modal.ok()">Okay</button>
-      <button class="btn" ng-click="modal.cancel()">Cancel</button>
-    </div>
-  </div>
-
-</body>
+</div>
