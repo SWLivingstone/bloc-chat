@@ -8,18 +8,18 @@
         id="new-room-button" ng-click="open()">New Room
       </button>
 
-      <div class="room-list" ng-repeat="room in home.rooms.all">
-        <p ng-click="home.rooms.setRoom(room)">
+      <div class="room-list" ng-repeat="room in home.rooms">
+        <p ng-click="home.setRoom(room)">
           {{room.$value}}
         </p>
       </div>
     </div>
     <div class="col-sm-9 main chat-window">
       <h2>
-        {{home.rooms.currentRoom}}
+        {{home.currentRoom}}
       </h2>
       <div class="row chat-room"
-        ng-repeat="chat in home.message.showConversation(home.rooms.currentRoomId)">
+        ng-repeat="chat in home.showConversation(home.currentRoomId)">
         <div class="col-sm-3 user-name">{{ chat.userName }}</div>
         <div class="col-sm-8 content">{{ chat.content }}</div>
       </div>

@@ -5,17 +5,11 @@
     var rooms = $firebaseArray(ref);
 
     Room.all = rooms;
-    Room.currentRoom = "Select a Chatroom!";
-    Room.currentRoomId = 1234;
 
     Room.add = function(room) {
       rooms.$add(room);
     };
 
-    Room.setRoom = function(room) {
-      Room.currentRoom = room.$value;
-      Room.currentRoomId = room.$id;
-    };
 
     return Room;
   }
