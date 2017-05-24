@@ -10,37 +10,8 @@
     *@param {String} roomId
     */
     Message.getRoomById = function(roomId) {
-      var room = ref.orderByChild('roomId').equalTo(roomId);
-      var roomChats;
-      room.on("value", function(response) {
-        roomChats = response.val();
-      });
-      return roomChats;
-    };
-
-    /**
-    *@function showConversation
-    *@desc Gets messages by roomId and pushes them to an array.
-    *@param {String} roomId
-    */
-    Message.showConversation = function(roomId) {
-      var chats = Message.getRoomById(roomId);
-      var conversation = [];
-      // if chats is not null loop through chats and
-      // push to conversation array.
-      if (chats !== null && chats !== undefined) {
-      // If chats is not an array of objects turn chats
-      // into an array of objects.
-        if (typeof chats === 'object') {
-          chats = Object.values(chats);
-        }
-        for (var i = 0; i < chats.length; i++) {
-          if (chats[i] !== undefined) {
-          conversation.push(chats[i]);
-          }
-        }
-    }
-      return conversation;
+      console.log(roomId);
+      return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
     };
 
     return Message;

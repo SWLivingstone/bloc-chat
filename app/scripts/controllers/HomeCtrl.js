@@ -3,15 +3,12 @@
     this.rooms = Room.all;
     this.add = Room.add();
     this.currentRoom = "Select a Chatroom!";
-    this.currentRoomId = 1234;
+
 
     this.setRoom = function (room) {
       this.currentRoom = room.$value;
       this.currentRoomId = room.$id;
-    };
-
-    this.showConversation = function (roomId) {
-      return Message.showConversation(roomId);
+      this.messages = Message.getRoomById(this.currentRoomId);
     };
 
     $scope.open = function () {

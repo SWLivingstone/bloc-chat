@@ -19,7 +19,7 @@
         {{home.currentRoom}}
       </h2>
       <div class="row chat-room"
-        ng-repeat="chat in home.showConversation(home.currentRoomId)">
+        ng-repeat="chat in home.messages">
         <div class="col-sm-3 user-name">{{ chat.userName }}</div>
         <div class="col-sm-8 content">{{ chat.content }}</div>
       </div>
