@@ -3,22 +3,25 @@
 </header>
 <div class=" main">
   <div class="row main">
-    <div class="col-xs-4 sidebar">
+    <div class="col-sm-3 sidebar">
       <button type="button" class="btn-sm btn-default"
         id="new-room-button" ng-click="open()">New Room
       </button>
 
       <div class="room-list" ng-repeat="room in home.rooms.all">
-        <p>
+        <p ng-click="home.rooms.setRoom(room)">
           {{room.$value}}
         </p>
       </div>
     </div>
-    <div class="col-xs-8 main">
+    <div class="col-sm-9 main">
       <h2>
-        Time For Tea?
+        {{home.rooms.currentRoom}}
       </h2>
-      <img src="assets/images/tea_cup.png" alt="Tea Cup"
-        class="img-responsive">
+      <div class="row chat-room"
+        ng-repeat="chat in home.message.showConversation(home.rooms.currentRoomId)">
+        <div class="col-sm-3 user-name">{{ chat.userName }}</div>
+        <div class="col-sm-8 content">{{ chat.content }}</div>
+      </div>
   </div>
 </div>

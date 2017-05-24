@@ -21,6 +21,8 @@ header h1 {
 p {
   margin: 0;
   padding: 0;
+  font-size: 2rem;
+  height: 30px;
 }
 
 h2 {
@@ -36,6 +38,19 @@ h2 {
   height: 100%;
 }
 
+@media (max-width: 767px) {
+  .sidebar {
+    height: auto;
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 450px) {
+  p {
+    height: 40px;
+    font-size: 2.5rem;
+  }
+}
+
 .main {
   height: 100%;
 }
@@ -48,6 +63,7 @@ h2 {
   border: 3px solid white;
   margin: 1rem;
 }
+
 
 .room-list:hover {
   transform: scale(1.1);
@@ -63,4 +79,19 @@ h2 {
   height: auto;
   max-width: 100px;
   min-width: auto;
+}
+
+.chat-room {
+  font-size: 2rem;
+}
+
+.user-name {
+  font-weight: 600;
+  background-color: lightgreen;
+}
+
+.content {
+  background-color: grey;
+  color: white;
+  border: 10px solid lightgreen;
 }
