@@ -25,15 +25,15 @@
     */
     Message.showConversation = function(roomId) {
       var chats = Message.getRoomById(roomId);
-      // If chats is not an array of objects turn chats
-      // into an array of objects.
-      if (typeof chats === 'object') {
-        chats = Object.values(chats);
-      }
       var conversation = [];
       // if chats is not null loop through chats and
       // push to conversation array.
       if (chats !== null && chats !== undefined) {
+      // If chats is not an array of objects turn chats
+      // into an array of objects.
+        if (typeof chats === 'object') {
+          chats = Object.values(chats);
+        }
         for (var i = 0; i < chats.length; i++) {
           if (chats[i] !== undefined) {
           conversation.push(chats[i]);
