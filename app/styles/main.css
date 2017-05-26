@@ -3,12 +3,12 @@ html, body {
   margin: 0;
   border: 0;
   padding: 0;
+  color: white;
 }
 
 header {
   background-color: #1CC6FF;
   text-align: center;
-  color: white;
   font-weight: 300;
   height: 10rem;
 }
@@ -19,6 +19,17 @@ header h1 {
   font-size: 5rem;
 }
 
+h4 {
+  background-color: #02C202;
+  margin-left: 70%;
+  margin-top: 0;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-bottom-left-radius: 25px;
+  font-size: 2rem;
+}
+
 p {
   margin: 0;
   padding: 0;
@@ -27,12 +38,23 @@ p {
 }
 
 h2 {
-  text-align: center;
-  padding-top: 10%;
+  margin-top: 100px;;
   margin-bottom: 10%;
+  margin-left: 20%;
   font-size: 4rem;
   font-weight: 300;
   margin-top: 0;
+  background-color: #C71CFF;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+
+}
+
+h3 {
+  color: black;
 }
 
 .sidebar {
@@ -58,7 +80,6 @@ h2 {
 }
 
 .room-list {
-  color: white;
   font-weight: 300;
   font-size: 1.3rem;
   text-align: center;
@@ -72,20 +93,8 @@ h2 {
   cursor: pointer;
 }
 
-
-#new-room-button {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  height: auto;
-  max-width: 100px;
-  min-width: auto;
-}
-
 .chat-room {
   font-size: 2rem;
-  color: white;
 }
 
 .user-name {
@@ -97,15 +106,26 @@ h2 {
 }
 
 .content {
-  background-color: grey;
-  border-bottom-left-radius: 25px;
   margin-bottom: 4px;
-  margin-top: 35px;
-  padding-top: 5px;
+  margin-top: 40px;
 }
 
 .chat-window {
-  background-color: lightgrey;
+  background-color: #484852;
+}
+
+#new-room-button {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  height: auto;
+  max-width: 100px;
+  min-width: auto;
+}
+
+#room {
+  margin-top: 10%;
 }
 
 @media (max-width: 767px) {

@@ -1,8 +1,17 @@
 (function () {
-  function HomeCtrl(Room, $uibModal, $scope, Message) {
+  function HomeCtrl( $timeout, $cookies, Room, $uibModal, $scope, Message) {
     this.rooms = Room.all;
     this.add = Room.add();
     this.currentRoom = "Select a Chatroom!";
+    this.user =
+
+    $timeout(function () {
+        $scope.$apply(function () {
+            var user = $cookies.get('blocChatCurrentUser');
+            return user;
+        });
+    }, 2000);
+
 
 
     this.setRoom = function (room) {
@@ -23,5 +32,5 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', '$uibModal', '$scope', 'Message', HomeCtrl]);
+    .controller('HomeCtrl', ['$timeout', '$cookies','Room', '$uibModal', '$scope', 'Message', HomeCtrl]);
 })();

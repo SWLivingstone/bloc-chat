@@ -15,9 +15,10 @@
       </div>
     </div>
     <div class="col-sm-9 main chat-window">
-      <h2>
-        {{home.currentRoom}}
-      </h2>
+        <h4 > {{ "Logged in as " + home.user }} </h4>
+      <div id="room">
+        <h2> {{home.currentRoom}} </h2>
+      </div>
       <div class="row chat-room"
         ng-repeat="chat in home.messages">
         <div class="col-sm-3 user-name">{{ chat.userName }}</div>
