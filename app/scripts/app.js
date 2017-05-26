@@ -16,6 +16,28 @@
   }
 
   angular
-      .module('blocChat',[ 'ui.bootstrap', 'ui.router', 'firebase'])
+      .module('blocChat',[ 'ngCookies', 'ui.bootstrap', 'ui.router', 'firebase'])
       .config(config);
+})();
+
+(function() {
+  function BlocChatCookies($uibModal, $cookies) {
+    var currentUser = $cookies.get('blocChatCurrentUser');
+    if (!currentUser || currentUser === '') {
+        $uibModal.open({
+          animation: true,
+          templateUrl:'/templates/enterUserName.html',
+          controller: 'ModalCtrl',
+          backdrop: 'static'
+      });
+    }
+    if (currentUser) {
+    alert("Welcome back " + currentUser + ", enjoy your stay!");
+  }
+}
+
+
+  angular
+    .module('blocChat')
+    .run(['$uibModal','$cookies', BlocChatCookies]);
 })();

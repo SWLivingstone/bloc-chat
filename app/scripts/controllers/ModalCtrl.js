@@ -1,5 +1,5 @@
 (function () {
-  function ModalCtrl(Room, $scope, $uibModalInstance) {
+  function ModalCtrl($cookies, Room, $scope, $uibModalInstance) {
 
     $scope.newRoom = '';
 
@@ -11,9 +11,19 @@
       Room.add($scope.newRoom);
       $uibModalInstance.close($scope.newRoom);
     };
+
+    $scope.submit = function (name) {
+      if (!$scope.name || $scope.name === '') {
+        alert("Please enter a username.");
+      } else {
+        $cookies.put('blocChatCurrentUser', $scope.name);
+        $uibModalInstance.close($scope.name);
+        alert("Welcome " + $cookies.get('blocChatCurrentUser') + ", enjoy your stay!");
+      }
+    };
   }
 
   angular
     .module('blocChat')
-    .controller('ModalCtrl', ['Room', '$scope', '$uibModalInstance', ModalCtrl]);
+    .controller('ModalCtrl', ['$cookies','Room', '$scope', '$uibModalInstance', ModalCtrl]);
 })();
