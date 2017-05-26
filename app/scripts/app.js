@@ -21,7 +21,7 @@
 })();
 
 (function() {
-  function BlocChatCookies($uibModal, $cookies) {
+  function BlocChatCookies($rootScope, $uibModal, $cookies) {
     var currentUser = $cookies.get('blocChatCurrentUser');
     if (!currentUser || currentUser === '') {
         $uibModal.open({
@@ -30,14 +30,16 @@
           controller: 'ModalCtrl',
           backdrop: 'static'
       });
+
     }
     if (currentUser) {
     alert("Welcome back " + currentUser + ", enjoy your stay!");
-  }
+    $rootScope.user = currentUser;
+  } 
 }
 
 
   angular
     .module('blocChat')
-    .run(['$uibModal','$cookies', BlocChatCookies]);
+    .run(['$rootScope','$uibModal','$cookies', BlocChatCookies]);
 })();

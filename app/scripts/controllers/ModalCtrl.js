@@ -2,7 +2,6 @@
   function ModalCtrl($rootScope, $cookies, Room, $scope, $uibModalInstance) {
 
     $scope.newRoom = '';
-    $rootScope.username = '';
 
     $scope.cancel = function(){
       $uibModalInstance.dismiss('cancel');
