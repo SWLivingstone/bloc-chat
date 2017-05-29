@@ -24,7 +24,20 @@
       <div class="row chat-room"
         ng-repeat="chat in home.messages">
         <div class="col-sm-3 user-name">{{ chat.userName }}</div>
-        <div class="col-sm-8 content">{{ chat.content }}</div>
+        <div class="col-sm-8 content">{{ chat.content }}
+          <span class="time-stamp"> {{ chat.sentAt | date:"MM/dd/yyyy 'at' h:mma" }} </span>
+        </div>
+      </div>
+      <div class="row enter-message"
+        ng-show="home.currentRoom != 'Select a Chatroom!'">
+        <form ng-submit=send()>
+          <input type="text" class="form-control finderBar"
+            ng-model="message" placeholder="Your message..."
+            autofocus my-enter="send()">
+          <button class="btn btn-default btn-success" type="button"
+            ng-click="send()" >Send Message
+          </button>
+        </form>
       </div>
   </div>
 </div>

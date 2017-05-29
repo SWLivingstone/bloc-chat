@@ -1,9 +1,8 @@
 (function () {
-  function HomeCtrl( $rootScope, $cookies, Room, $uibModal, $scope, Message) {
+  function HomeCtrl($cookies, Room, $uibModal, $scope, Message) {
     this.rooms = Room.all;
     this.add = Room.add();
     this.currentRoom = "Select a Chatroom!";
-    $scope.user = $rootScope.user;
 
     this.setRoom = function (room) {
       this.currentRoom = room.$value;
@@ -21,6 +20,12 @@
       }
     }, 500);
 
+    $scope.send = function() {
+      Message.send($scope.message, $scope.user);
+      $scope.message = '';
+
+    };
+
     $scope.open = function () {
       $uibModal.open({
         animation: true,
@@ -33,5 +38,5 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$rootScope', '$cookies','Room', '$uibModal', '$scope', 'Message', HomeCtrl]);
+    .controller('HomeCtrl', ['$cookies','Room', '$uibModal', '$scope', 'Message', HomeCtrl]);
 })();
