@@ -11,23 +11,15 @@
       this.messages = Message.getRoomById(this.currentRoomId);
     };
 
-    setTimeout(function () {
-        $scope.$apply(function () {
-            $scope.user = $cookies.get('blocChatCurrentUser');
-        });
-    }, 5000);
+    var myInterval = setInterval(function(){
+      $scope.$apply(function () {
+          $scope.user = $cookies.get('blocChatCurrentUser');
+      });
 
-    setTimeout(function () {
-        $scope.$apply(function () {
-            $scope.user = $cookies.get('blocChatCurrentUser');
-        });
-    }, 10000);
-
-    setTimeout(function () {
-        $scope.$apply(function () {
-            $scope.user = $cookies.get('blocChatCurrentUser');
-        });
-    }, 15000);
+      if ($scope.user) {
+        clearInterval(myInterval);
+      }
+    }, 500);
 
     $scope.open = function () {
       $uibModal.open({
