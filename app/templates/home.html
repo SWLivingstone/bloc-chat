@@ -1,5 +1,8 @@
 <header class="">
-  <h1>Bloc Chat</h1>
+  <h1>Park Chat</h1>
+  <div id="logged-in" >
+    <h4 > {{ "Logged in as " + user }} </h4>
+  </div>
 </header>
 <div class=" main">
   <div class="row main">
@@ -9,18 +12,17 @@
       </button>
 
       <div class="room-list" ng-repeat="room in home.rooms">
-        <p ng-click="home.setRoom(room)">
+        <p ng-click="home.setRoom(room)" class="not-active"
+          ng-show="home.currentRoom !== room.$value">
+          {{room.$value}}
+        </p>
+        <p class="active" ng-show="home.currentRoom === room.$value">
           {{room.$value}}
         </p>
       </div>
     </div>
     <div class="col-sm-9 main chat-window">
-      <div >
-        <h4 > {{ "Logged in as " + user }} </h4>
-      </div>
-      <div id="room">
-        <h2> {{home.currentRoom}} </h2>
-      </div>
+
       <div class="row chat-room"
         ng-repeat="chat in home.messages">
         <div class="col-sm-3 user-name">{{ chat.userName }}</div>

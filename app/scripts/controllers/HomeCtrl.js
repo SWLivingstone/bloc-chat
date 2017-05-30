@@ -8,6 +8,8 @@
       this.currentRoom = room.$value;
       this.currentRoomId = room.$id;
       this.messages = Message.getRoomById(this.currentRoomId);
+      $('.chat-window').animate({
+        scrollTop: $('.chat-window')[0].scrollHeight}, 2000);
     };
 
     var myInterval = setInterval(function(){
@@ -23,6 +25,8 @@
     $scope.send = function() {
       Message.send($scope.message, $scope.user);
       $scope.message = '';
+      $('.chat-window').animate({
+        scrollTop: $('.chat-window')[0].scrollHeight},2000);
 
     };
 
@@ -34,7 +38,9 @@
         backdrop: 'static'
     });
   };
+
   }
+
 
   angular
     .module('blocChat')

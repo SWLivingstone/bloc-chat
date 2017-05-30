@@ -16,7 +16,7 @@
   }
 
   angular
-      .module('blocChat',[ 'ngCookies', 'ui.bootstrap', 'ui.router', 'firebase'])
+      .module('blocChat',['ngCookies', 'ui.bootstrap', 'ui.router', 'firebase'])
       .config(config);
 })();
 
@@ -32,10 +32,6 @@
       });
 
     }
-    if (currentUser) {
-    alert("Welcome back " + currentUser + ", enjoy your stay!");
-    $rootScope.user = currentUser;
-  } 
 }
 
 
