@@ -1,6 +1,6 @@
 <header class="">
   <h1>Park Chat</h1>
-  <div ng-show="window.innerWidth > 500" id="logged-in" >
+  <div class="logged-in" >
     <h4 > {{ "Logged in as " + user }} </h4>
   </div>
 </header>
@@ -10,10 +10,10 @@
       <button type="button" class="btn-sm btn-default"
         id="new-room-button" ng-click="open()">New Room
       </button>
-      <div ng-show="window.innerWidth < 500" id="logged-in" >
+      <div class="logged-in-mobile" >
         <h4 > {{ "Logged in as " + user }} </h4>
       </div>
-      <div ng-show="window.innerWidth > 500" class="room-list"
+      <div class="room-list"
           ng-repeat="room in home.rooms">
         <p ng-click="home.setRoom(room)" class="not-active"
           ng-show="home.currentRoom !== room.$value">
@@ -23,7 +23,7 @@
           {{room.$value}}
         </p>
       </div>
-      <div ng-show="window.innerWidth < 500" class="dropdown">
+      <div class="dropdown">
         <button class="btn btn-success dropdown-toggle"
           type="button" data-toggle="dropdown"> Chat rooms
           <span class="caret"></span></button>

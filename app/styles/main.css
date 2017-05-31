@@ -150,10 +150,18 @@ h3 {
   margin-top: 10%;
 }
 
-#logged-in {
+.logged-in {
   position: absolute;
   top: 0;
   right: 0;
+  padding-right: 15px;
+}
+
+.logged-in-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 15px;
 }
 
 @media (max-width: 767px) {
@@ -182,9 +190,6 @@ h3 {
   header {
     height: 11vh;
   }
-  #logged-in {
-    padding-right: 15px;
-  }
   .content {
     margin-top: 0;
     border-radius: 0;
@@ -199,4 +204,22 @@ h3 {
     height: 75vh;
   }
 
+}
+.dropdown,
+.logged-in-mobile {
+  display: none;
+}
+@media (max-width: 500px) {
+  .dropdown,
+  .logged-in-mobile {
+    display: block;
+  }
+
+  .logged-in {
+    display: none;
+  }
+
+  .room-list {
+    display: none;
+  }
 }
