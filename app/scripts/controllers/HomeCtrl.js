@@ -1,15 +1,16 @@
 (function () {
-  function HomeCtrl($cookies, Room, $uibModal, $scope, Message) {
+  function HomeCtrl($window, $cookies, Room, $uibModal, $scope, Message) {
     this.rooms = Room.all;
     this.add = Room.add();
     this.currentRoom = "Select a Chatroom!";
+    $scope.window = $window;
 
     this.setRoom = function (room) {
       this.currentRoom = room.$value;
       this.currentRoomId = room.$id;
       this.messages = Message.getRoomById(this.currentRoomId);
       $('.chat-window').animate({
-        scrollTop: $('.chat-window')[0].scrollHeight}, 2000);
+        scrollTop: $('.chat-window')[0].scrollHeight});
     };
 
     var myInterval = setInterval(function(){
@@ -44,5 +45,5 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['$cookies','Room', '$uibModal', '$scope', 'Message', HomeCtrl]);
+    .controller('HomeCtrl', ['$window','$cookies','Room', '$uibModal', '$scope', 'Message', HomeCtrl]);
 })();

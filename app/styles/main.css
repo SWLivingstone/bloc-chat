@@ -70,18 +70,7 @@ h3 {
   background-color:  #02C202;
 }
 
-@media (max-width: 767px) {
-  .sidebar {
-    height: auto;
-    padding-bottom: 10px;
-  }
-}
-@media (max-width: 450px) {
-  p {
-    height: 40px;
-    font-size: 2.5rem;
-  }
-}
+
 
 .main {
   height: 100%;
@@ -104,6 +93,16 @@ h3 {
 .chat-room {
   font-size: 2rem;
 
+}
+
+.current-room {
+  float: right;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-success {
+  margin-left: 10px;
 }
 
 .enter-message {
@@ -158,6 +157,34 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  .sidebar {
+    height: auto;
+    padding-bottom: 10px;
+  }
+  h4 {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  p {
+    height: 40px;
+    font-size: 2.5rem;
+  }
+  .enter-message {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .chat-room {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  header {
+    height: 11vh;
+  }
+  #logged-in {
+    padding-right: 15px;
+  }
   .content {
     margin-top: 0;
     border-radius: 0;
@@ -168,4 +195,8 @@ h3 {
     border-radius: 0;
     margin-top: 15px;
   }
+  .chat-window {
+    height: 75vh;
+  }
+
 }

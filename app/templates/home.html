@@ -1,17 +1,20 @@
 <header class="">
   <h1>Park Chat</h1>
-  <div id="logged-in" >
+  <div ng-show="window.innerWidth > 500" id="logged-in" >
     <h4 > {{ "Logged in as " + user }} </h4>
   </div>
 </header>
 <div class=" main">
   <div class="row main">
-    <div class="col-sm-3 sidebar">
+    <div my-mobile class="col-sm-3 sidebar">
       <button type="button" class="btn-sm btn-default"
         id="new-room-button" ng-click="open()">New Room
       </button>
-
-      <div class="room-list" ng-repeat="room in home.rooms">
+      <div ng-show="window.innerWidth < 500" id="logged-in" >
+        <h4 > {{ "Logged in as " + user }} </h4>
+      </div>
+      <div ng-show="window.innerWidth > 500" class="room-list"
+          ng-repeat="room in home.rooms">
         <p ng-click="home.setRoom(room)" class="not-active"
           ng-show="home.currentRoom !== room.$value">
           {{room.$value}}
@@ -20,10 +23,24 @@
           {{room.$value}}
         </p>
       </div>
+      <div ng-show="window.innerWidth < 500" class="dropdown">
+        <button class="btn btn-success dropdown-toggle"
+          type="button" data-toggle="dropdown"> Chat rooms
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" >
+            <li ng-click="home.setRoom(room)"
+            ng-repeat="room in home.rooms"><a href="#">
+              {{room.$value}}</a>
+            </li>
+          </ul>
+          <p class="current-room">
+            {{ home.currentRoom }}
+          </p>
+      </div>
     </div>
     <div class="col-sm-9 main chat-window">
 
-      <div class="row chat-room"
+      <div class="row chat-room "
         ng-repeat="chat in home.messages">
         <div class="col-sm-3 user-name">{{ chat.userName }}</div>
         <div class="col-sm-8 content">{{ chat.content }}
